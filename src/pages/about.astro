@@ -1,5 +1,23 @@
 ---
+import { tuple } from "astro:schema";
 
+const pageTitle = "About Me";
+
+const identity = {
+  firstName: "Rene",
+  secondName: "Baine",
+  school: "Trent University",
+  age: 21,
+  location: "Uganda",
+  role: "Software Developer",
+  interests: ["Web Development", "Graphic Design", "Visual Art"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "Astro", "React", "Node.js"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="en">
@@ -8,16 +26,53 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>About</title>
+    <title>{pageTitle}</title>
+     <style>
+      h1 {
+        color: rgb(216, 99, 197);
+        font-size: 4rem;
+      }
+    </style>
   </head>
   <body>
     <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/blog/">Blog</a>
 
-    <h1>About Me</h1>
+    <h1>{pageTitle}</h1>
     <h2>This is a new Astro Blog site</h2>
-    <p>Welcome to my blog where I share my thoughts and experiences.</p>
-    <p>Stay tuned for more updates!</p>
+    <p>Here are a few facts about me:</p>
+    <ul>
+      <li>My name is {identity.firstName}</li>
+      <li>
+        I live in {identity.location} and I'm a second year computer science student
+        at {identity.school}
+      </li>
+      {
+        identity.interests.length >= 2 && (
+          <li>
+            Two of my hobbies are: {identity.interests[0]} and{" "}
+            {identity.interests[1]}
+          </li>
+        )
+      }
+    </ul>
+    <p>My skills consist of:</p>
+    <ul>
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+
+    {happy && <p>I am happy to be learning Astro!</p>}
+
+    {finished && <p>I finished this tutorial!</p>}
+
+    {
+      goal === 3 ? (
+        <p>My goal is to finish in 3 days.</p>
+      ) : (
+        <p>My goal is not 3 days.</p>
+      )
+    }
+    
   </body>
 </html>
