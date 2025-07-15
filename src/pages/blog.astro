@@ -1,5 +1,9 @@
 ---
-const pageTitle = "My Astro Blog"
+import '../styles/global.css';
+
+const pageTitle = "Articles";
+
+const heading = "white"
 ---
 
 <html lang="en">
@@ -11,11 +15,19 @@ const pageTitle = "My Astro Blog"
     <title>Blog</title>
   </head>
   <body>
+    <style define:vars={{heading}}>
+      .heading {
+        color: var(--heading);
+        font-size: 3rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+    </style>
     <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/blog/">Blog</a>
 
-    <h1>{pageTitle}</h1>
+    <h1 class="heading">{pageTitle}</h1>
     <p>This is where i will post about technologies I find interesting</p>
 
     <ul>
