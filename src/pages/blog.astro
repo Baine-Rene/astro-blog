@@ -1,9 +1,10 @@
 ---
 import '../styles/global.css';
+import Footer from '../components/Footer.astro';  
+import Header from '../components/Header.astro';
 
 const pageTitle = "Articles";
 
-const heading = "white"
 ---
 
 <html lang="en">
@@ -12,20 +13,18 @@ const heading = "white"
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Blog</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
-    <style define:vars={{heading}}>
-      .heading {
-        color: var(--heading);
-        font-size: 3rem;
+    <style>
+      h1 {
+        color: #ffffff;
+        font-size: 2.5rem;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       }
 
     </style>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+    <Header/>
 
     <h1 class="heading">{pageTitle}</h1>
     <p>This is where i will post about technologies I find interesting</p>
@@ -35,5 +34,7 @@ const heading = "white"
       <li><a href="/posts/post-2/">Post 2</a></li>
       <li><a href="/posts/post-3/">Post 3</a></li>
     </ul>
+    
+    <Footer/>
   </body>
 </html>

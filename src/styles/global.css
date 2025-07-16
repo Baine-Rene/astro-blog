@@ -10,6 +10,14 @@ body {
   padding: 5em;
   line-height: 1.5;
 }
+footer {
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  text-align: center;
+  background-color: #111;
+}
 a{
     color: #00aaff;
     text-decoration: none;
@@ -29,4 +37,52 @@ h1 {
 }
 h2, p{
     color: white;
+}
+
+/*nav links*/
+
+.nav-links{
+  width: 100%;
+  top:5rem;
+  left: 48px;
+  background-color: #ffffff ;
+  display: none;
+  margin: 0;
+}
+
+.nav-links a {
+  display: block;
+  text-align:center;
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color:rgb(0, 0, 0);
+  background-color: #ffffff;
+  border-radius: 1em;
+}
+
+.nav-links a:hover,
+.nav-links a:focus
+{
+  background-color: #000000 ;
+  color: #ffffff;
+  
+}
+
+.expanded{
+  display: unset;
+}
+
+@media screen and (min-width: 636px){
+  .nav-links{
+    display: block;
+    position:static;
+    width: auto;
+    background: none;
+  }
+  .nav-links a{
+    display: inline;
+    padding: 8px 20px;
+  }
 }

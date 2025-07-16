@@ -1,9 +1,9 @@
 ---
 import '../styles/global.css';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 
-const pageTitle = "Homepage"
-
-
+const pageTitle = "Home page"
 ---
 
 <html lang="en">
@@ -15,10 +15,15 @@ const pageTitle = "Homepage"
     <title>Home</title>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
-
+    <style>
+      h1 {
+        color: #ffffff;
+        font-size: 2.5rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+    </style>
+    <Header/>
     <h1>{pageTitle}</h1>
+    <Footer/>
   </body>
 </html>
