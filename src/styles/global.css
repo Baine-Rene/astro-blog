@@ -41,10 +41,25 @@ h2, p{
 
 /*nav links*/
 
+.hamburger {
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  display: block;
+  width: 40px;
+  height: 2.5px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+}
+
 .nav-links{
   width: 100%;
   top:5rem;
   left: 48px;
+  padding: 0rem 0 2.5rem;
   background-color: #ffffff ;
   display: none;
   margin: 0;
@@ -67,6 +82,7 @@ h2, p{
 {
   background-color: #000000 ;
   color: #ffffff;
+  border: #ffffff solid 0.1em;
   
 }
 
@@ -85,4 +101,8 @@ h2, p{
     display: inline;
     padding: 8px 20px;
   }
+  .hamburger{
+    display: none;
+  }
 }
+
