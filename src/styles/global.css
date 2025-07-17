@@ -9,6 +9,7 @@ body {
   max-width: 80ch;
   padding: 5em;
   line-height: 1.5;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 footer {
   border-radius: 0.5rem;
@@ -34,6 +35,7 @@ a:hover {
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
+  color: white;
 }
 h2, p{
     color: white;
