@@ -1,8 +1,5 @@
 ---
-import "../styles/global.css";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-
+import Baselayout from "../layouts/Baselayout.astro";
 const pageTitle = "About Me";
 
 const identity = {
@@ -35,7 +32,11 @@ const listColor = "white";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
-    <style define:vars={{ skillColor, fontWeight, textCase, listColor }}>
+    
+  </head>
+
+  <body>
+    <style is:global define:vars={{ skillColor, fontWeight, textCase, listColor }}>
       h1 {
         color: rgb(255, 255, 255);
         font-size: 2.5rem;
@@ -50,11 +51,9 @@ const listColor = "white";
         color: var(--listColor);
       }
     </style>
-  </head>
-  <body>
-    <Header />
 
-    <h1>{pageTitle}</h1>
+
+    <Baselayout pageTitle={pageTitle}>
     <h2>This is a blog site developed using Astro framework</h2>
     <p>Here are a few facts about me:</p>
     <ul class="listColor">
@@ -88,10 +87,6 @@ const listColor = "white";
         <p>My goal is not 3 days.</p>
       )
     }
-
-    <Footer />
-    <script>
-      import "../scripts/menu";
-    </script>
+  </Baselayout>
   </body>
 </html>

@@ -1,7 +1,5 @@
 ---
-import "../styles/global.css";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
+import Baselayout from "../layouts/Baselayout.astro";
 
 const pageTitle = "Articles";
 ---
@@ -15,16 +13,8 @@ const pageTitle = "Articles";
     <title>{pageTitle}</title>
   </head>
   <body>
-    <style>
-      h1 {
-        color: #ffffff;
-        font-size: 2.5rem;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-    </style>
-    <Header />
 
-    <h1 class="heading">{pageTitle}</h1>
+    <Baselayout pageTitle={pageTitle}>
     <p>This is where i will post about technologies I find interesting</p>
 
     <ul>
@@ -32,10 +22,6 @@ const pageTitle = "Articles";
       <li><a href="/posts/post-2/">Post 2</a></li>
       <li><a href="/posts/post-3/">Post 3</a></li>
     </ul>
-
-    <Footer />
-    <script>
-      import "../scripts/menu";
-    </script>
+    </Baselayout>
   </body>
 </html>

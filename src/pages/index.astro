@@ -1,33 +1,8 @@
 ---
-import "../styles/global.css";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-
-const pageTitle = "Home page";
+import Baselayout from "../layouts/Baselayout.astro"
+const pageTitle = "Home Page"
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Home</title>
-  </head>
-  <body>
-    <style>
-      h1 {
-        color: #ffffff;
-        font-size: 2.5rem;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-    </style>
-    <Header />
-    <h1>{pageTitle}</h1>
-    <Footer />
-
-    <script>
-      import "../scripts/menu";
-    </script>
-  </body>
-</html>
+<Baselayout pageTitle={pageTitle}>
+<h2>The blog site I made with Astro</h2>
+</Baselayout>
